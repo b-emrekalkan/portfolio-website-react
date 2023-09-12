@@ -2,7 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## To start React in the folder 🖥️
+
+```bash
+ yarn create react-app .
+```
+
+## To add MUI 🖥️
+
+```bash
+ npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+```
+
+## To add React-Router 🖥️
+
+```bash
+ npm i react-router-dom
+```
+
 
 In the project directory, you can run:
 
