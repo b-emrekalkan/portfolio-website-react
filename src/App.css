@@ -34,10 +34,9 @@
 }
 
 .toggleButton svg {
-  font-size: 50px;
+  font-size: 45px;
 }
 .toggleButton button {
-  margin-right: 20px;
   background-color: transparent;
   border: none;
   color: white;
@@ -45,18 +44,20 @@
 }
 
 #open {
-  height: 100vh;
+  height: 40vh;
 }
 
 #open .links {
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #open a {
   width: 100%;
   text-align: center;
+  display:flex;
+  justify-content:center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -73,9 +74,13 @@
     display: none;
   }
 
-  .hiddenLinks {
-    display: none;
+  .links{
+    display:flex;
   }
+
+  /* .hiddenLinks {
+    display: none;
+  } */
 
   #open {
     height: 100px;
@@ -83,6 +88,9 @@
 
   #open .links {
     flex-direction: row;
+    text-align: center;
+  display:flex;
+  justify-content:center
   }
 }
 /* navbar css bitiş */
@@ -261,6 +269,10 @@
 .projectItem h1{
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.projectItem > h3{
+  cursor:zoom;
 }
 /* projectItem css bitiş */
 
