@@ -6,6 +6,7 @@ const Experience = () => {
     return (
         <div className='expContainer'>
             <div className="expElements">
+                <h1>Professional Experience</h1>
                 <ol>
                     <li>
                         <SchoolIcon />

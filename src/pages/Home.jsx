@@ -19,15 +19,15 @@ const Home = () => {
                 <h1>Skills</h1>
                 <ol className='list'>
                     <li className='item'>
-                        <h2>Frontend</h2>
+                        <h3>Frontend</h3>
                         <span>HTML, CSS, Bootstrap, SASS, Tailwind, React.js, Next.js</span>
                     </li>
                     <li className='item'>
-                        <h2>Backend</h2>
+                        <h3>Backend</h3>
                         <span>Django</span>
                     </li>
                     <li className='item'>
-                        <h2>Programming Languages</h2>
+                        <h3>Programming Languages</h3>
                         <span>JavaScript, Python, PHP</span>
                     </li>
                 </ol>
