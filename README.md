@@ -212,3 +212,9 @@ const Footer = () => {
 
 export default Footer
 ```
+
+## 📂 Create "Home.jsx" file under "components" folder and import social media icons from MUI. Then import Home.jsx in App.js
+
+```javascript
+
+```
