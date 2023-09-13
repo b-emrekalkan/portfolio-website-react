@@ -292,3 +292,79 @@ const Experience = () => {
 
 export default Experience
 ```
+
+## 📂 For Projects we need a "helper" folder under "src" folder. Then create a "ProjectList.js" file in it and list the projects here.
+
+```javascript
+export const ProjectList = [
+    {
+        name: "modayakamoz.net",
+        image: "https://pbs.twimg.com/media/E7S3QliX0AAF6nN.jpg"
+    },
+    {
+        name: "modayakamoz.pl",
+        image: "https://localinsider.storage.googleapis.com/2022/07/best-food-delivery-apps-.jpeg"
+    }
+    ,
+    {
+        name: "modamotyl.com",
+        image: "https://cdn.wmaraci.com/nedir/forum.png"
+    },
+    {
+        name: "Movie App",
+        image: "https://screenshots.webflow.com/sites/607d3f3b88d1c85f6691eff2/20210419114759_246d885cbcec8bebf7bb651f8e928c78.png"
+    },
+    {
+        name: "Recipe App",
+        image: "https://localinsider.storage.googleapis.com/2022/07/best-food-delivery-apps-.jpeg"
+    }
+    ,
+    {
+        name: "SASS Website",
+        image: "https://cdn.wmaraci.com/nedir/forum.png"
+    },
+];
+```
+
+## 📂 Create "ProjectItem.jsx" component in "components" folder to map and show the projects.
+
+```javascript
+import React from 'react'
+
+const ProjectItem = ({ image, name }) => {
+    return (
+        <div className='projectItem'>
+            <div className="picture">
+                <img src={image} alt="" />
+            </div>
+            <h1>{name}</h1>
+        </div>
+    )
+}
+
+export default ProjectItem
+```
+
+## ♦️ Import ProjectItem and ProjectList in "Projects.jsx"
+
+```javascript
+import React from 'react'
+import ProjectItem from "../components/ProjectItem"
+import { ProjectList } from '../helper/ProjectList'
+
+const Projects = () => {
+    return (
+        <div className='projects'>
+            <h1>My Personal Projects</h1>
+            <div className="projectList">
+                {ProjectList.map((project) => {
+                    return <ProjectItem name={project.name} image={project.image} />
+                })}
+
+            </div>
+        </div>
+    )
+}
+
+export default Projects
+```
