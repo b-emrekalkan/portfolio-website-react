@@ -1,3 +1,7 @@
+# <center> [React Portfolio Website](https://portfolio-website-with-react.netlify.app/)</center>
+
+<hr>
+
 # ♦️ Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -176,11 +180,11 @@ const Navbar = () => {
                 }}>
                     <ReorderIcon />
                 </button>
-                <div className='links'>
-                    <Link to="/">Home</Link>
-                    <Link to="/projects">Projects</Link>
-                    <Link to="/experience">Experience</Link>
-                </div>
+            </div>
+            <div className="links">
+                <Link to="/">Home</Link>
+                <Link to="/projects">Projects</Link>
+                <Link to="/experience">Experience</Link>
             </div>
         </div>
     )
@@ -192,25 +196,33 @@ export default Navbar
 ## 📂 Create "Footer.jsx" file under "components" folder and import social media icons from MUI. Then import Footer.jsx in App.js and add it before the last "BrowserRouter"
 
 ```javascript
-import React from 'react'
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import React from 'react';
+import { Link } from 'react-router-dom';
+// import InstagramIcon from '@mui/icons-material/Instagram';
+// import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
     return (
         <div className='footer'>
             <div className='socialMedia'>
-                <InstagramIcon />
-                <FacebookIcon />
-                <LinkedInIcon />
+                {/* <Link to="/instagram">
+                    <InstagramIcon />
+                </Link>
+                <Link to="/facebook">
+                    <FacebookIcon />
+                </Link> */}
+                <Link to="https://www.linkedin.com/in/bemrekalkan/">
+                    <LinkedInIcon />
+                </Link>
             </div>
-            <p> &copy; 2023 linkedin.com/in/bemrekalkan</p>
+            {/* <p>&copy; 2023 <Link to="https://www.linkedin.com/in/bemrekalkan/">BEK</Link></p> */}
         </div>
     )
 }
 
-export default Footer
+export default Footer;
+
 ```
 
 ## 📂 Customize "Home.jsx" and import social media icons from MUI. Then import it in App.js
@@ -237,15 +249,15 @@ const Home = () => {
                 <h1>Skills</h1>
                 <ol className='list'>
                     <li className='item'>
-                        <h2>Frontend</h2>
+                        <h3>Frontend</h3>
                         <span>HTML, CSS, Bootstrap, SASS, Tailwind, React.js, Next.js</span>
                     </li>
                     <li className='item'>
-                        <h2>Backend</h2>
+                        <h3>Backend</h3>
                         <span>Django</span>
                     </li>
                     <li className='item'>
-                        <h2>Programming Languages</h2>
+                        <h3>Programming Languages</h3>
                         <span>JavaScript, Python, PHP</span>
                     </li>
                 </ol>
@@ -268,6 +280,7 @@ const Experience = () => {
     return (
         <div className='expContainer'>
             <div className="expElements">
+                <h1>Professional Experience</h1>
                 <ol>
                     <li>
                         <SchoolIcon />
@@ -329,20 +342,25 @@ export const ProjectList = [
 ## 📂 Create "ProjectItem.jsx" component in "components" folder to map and show the projects.
 
 ```javascript
-import React from 'react'
+import React from 'react';
 
 const ProjectItem = ({ image, name }) => {
-    return (
-        <div className='projectItem'>
-            <div className="picture">
-                <img src={image} alt="" />
-            </div>
-            <h1>{name}</h1>
-        </div>
-    )
-}
+    const redirectToImageLink = () => {
+        window.open(image, '_blank'); // Opens the specified URL in a new tab.
+    };
 
-export default ProjectItem
+    return (
+        <div className='projectItem' onClick={redirectToImageLink}>
+            <div className="picture">
+                <iframe src={image} title={name}></iframe>
+            </div>
+            <h3>{name}</h3>
+        </div>
+    );
+};
+
+export default ProjectItem;
+
 ```
 
 ## ♦️ Import ProjectItem and ProjectList in "Projects.jsx"
